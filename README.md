@@ -2,20 +2,19 @@
 
 ## Estrutura do projeto
 
-tp2-microservicos/
-├── filmeservice/ (microsserviço de filmes)
-│ ├── src/
-│ ├── pom.xml
-│ └── Dockerfile
-├── avaliacaoservice/ (microsserviço de avaliações)
-│ ├── src/
-│ ├── pom.xml
-│ └── Dockerfile
-├── docker-compose.yml
-├── deployment.yaml (Deployment do filme-service)
-├── service.yaml (Service do filme-service)
-├── avaliacao-deployment.yaml (Deployment do avaliacao-service)
-└── avaliacao-service.yaml (Service do avaliacao-service)
+- **filmeservice/** — microsserviço de filmes
+  - src/
+  - pom.xml
+  - Dockerfile
+- **avaliacaoservice/** — microsserviço de avaliações
+  - src/
+  - pom.xml
+  - Dockerfile
+- **docker-compose.yml**
+- **deployment.yaml** — Deployment do filme-service
+- **service.yaml** — Service do filme-service
+- **avaliacao-deployment.yaml** — Deployment do avaliacao-service
+- **avaliacao-service.yaml** — Service do avaliacao-service
 
 
 ## Serviços
