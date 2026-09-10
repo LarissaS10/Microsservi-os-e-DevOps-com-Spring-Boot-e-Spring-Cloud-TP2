@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: filme-service-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: filme-service
+  template:
+    metadata:
+      labels:
+        app: filme-service
+    spec:
+      containers:
+        - name: filme-service
+          image: filme-image
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8081

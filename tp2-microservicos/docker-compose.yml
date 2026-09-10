@@ -1,0 +1,24 @@
+services:
+  filme-service:
+    build: ./filmeservice
+    container_name: filme-container
+    ports:
+      - "8081:8081"
+    networks:
+      - rede-filmes
+
+  avaliacao-service:
+    build: ./avaliacaoservice
+    container_name: avaliacao-container
+    ports:
+      - "8082:8082"
+    environment:
+      - FILME_SERVICE_URL=http://filme-service:8081
+    depends_on:
+      - filme-service
+    networks:
+      - rede-filmes
+
+networks:
+  rede-filmes:
+    name: rede-filmes

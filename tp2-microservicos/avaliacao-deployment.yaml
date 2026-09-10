@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: avaliacao-service-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: avaliacao-service
+  template:
+    metadata:
+      labels:
+        app: avaliacao-service
+    spec:
+      containers:
+        - name: avaliacao-service
+          image: avaliacao-image
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8082
+          env:
+            - name: FILME_SERVICE_URL
+              value: "http://filme-service:8081"
